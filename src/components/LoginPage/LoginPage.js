@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import firebase from "../../fbase";
+import firebase, { authService, firebaseInstance } from "../../fbase";
 import "./LoginPage.css";
 
 const LoginPage = () => {
+  let navigate = useNavigate();
   const {
     register,
     formState: { errors },
@@ -29,6 +30,16 @@ const LoginPage = () => {
         setErrorFromSubmit("");
       }, 5000);
     }
+  };
+
+  const goToRegi = () => {
+    navigate("/register");
+  };
+
+  const logInGoogle = async () => {
+    let provider = new firebaseInstance.auth.GoogleAuthProvider();
+    let data = await authService.signInWithPopup(provider);
+    console.log(data);
   };
 
   return (
@@ -61,15 +72,13 @@ const LoginPage = () => {
         <input type="submit" disabled={loading} />
 
         <div className="btnWrap">
-          <button className="registerBtn">
+          <button onClick={goToRegi} className="googleBtn">
             <Link className="btnBottom" to="/register">
               회원가입
             </Link>
           </button>
-          <button className="googleBtn">
-            <Link className="btnBottom" to="/login">
-              google ID로 로그인
-            </Link>
+          <button onClick={logInGoogle} className="googleBtn btnBottom">
+            google ID로 로그인
           </button>
         </div>
       </form>

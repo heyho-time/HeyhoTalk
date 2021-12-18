@@ -13,10 +13,11 @@ form {
   margin: 30px auto;
 }
 
-.registerBtn,
 .googleBtn {
+  margin: 0 10px;
   display: block;
   padding: 10px;
+  width: 140px;
   border: none;
   border-radius: 3px;
 }
