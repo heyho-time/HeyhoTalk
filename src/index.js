@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
@@ -7,7 +8,6 @@ import promiseMiddleware from "redux-promise";
 import ReduxThunk from "redux-thunk";
 import Reducer from "./redux/reducer/index";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./index.css";
 
 const createStoreWithMiddleware = applyMiddleware(
   promiseMiddleware,
@@ -23,7 +23,9 @@ ReactDOM.render(
           Window.__REDUX_DEVTOOLS_EXTENSION__()
       )}
     >
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")
