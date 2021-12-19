@@ -1,0 +1,16 @@
+.drop {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-toggle {
+  margin: 20px 0;
+}
+
+.profilePic {
+  margin-top: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
