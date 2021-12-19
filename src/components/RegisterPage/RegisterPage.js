@@ -52,7 +52,7 @@ const RegisterPage = () => {
 
   return (
     <div className="auth-wrapper">
-      <h3>회원가입</h3>
+      <h3 className="regiH3">회원가입</h3>
       <form onSubmit={handleSubmit(onSubmit)}>
         <label>Email</label>
         <input

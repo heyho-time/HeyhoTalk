@@ -17,10 +17,10 @@ const AppRouter = () => {
       console.log(user);
 
       if (user) {
-        navigate("/");
+        navigate("/chat");
         dispatch(setUser(user));
       } else {
-        navigate("/login");
+        navigate("/");
       }
     });
   }, []);
@@ -30,8 +30,8 @@ const AppRouter = () => {
   // } else {
   return (
     <Routes>
-      <Route path="/" element={<ChatPage />}></Route>
-      <Route path="/login/*" element={<LoginPage />}></Route>
+      <Route path="/chat/*" element={<ChatPage />}></Route>
+      <Route path="/" element={<LoginPage />}></Route>
       <Route path="/register/*" element={<RegisterPage />}></Route>
     </Routes>
   );
