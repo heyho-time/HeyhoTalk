@@ -1,0 +1,8 @@
+.sidePanel {
+  padding: 2rem;
+  width: 300px;
+  min-height: 100vh;
+  min-width: 275px;
+  background-color: #35a8f1;
+  color: white;
+}
